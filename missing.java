@@ -24,9 +24,9 @@ sort(j+1);
 void sort(int x)
 {
 int temp;
-for(int i=0;i<size;i++)
+for(int i=0;i<x;i++)
 {
-for(int j=i;j<size-i-1;j++)
+for(int j=i;j<x-i-1;j++)
 {
 if(elements[i]>elements[j])
 {
