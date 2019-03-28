@@ -24,9 +24,17 @@ void strings(int start,int pos)
 {
 boolean lo;
 int ni;//represents next index
+do{
 lo=palindrome(start,pos);
 if(lo)
 System.out.println(s.substring(start,pos+1)+"  "+ pos);
+start++;
+ni=s.indexOf(s.charAt(pos),start);
+if(ni !=-1)
+palindrome(ni,pos);
+else
+break;
+} while(ni!=-1);
 }
 void check()
 {
