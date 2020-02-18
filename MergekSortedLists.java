@@ -1,24 +1,22 @@
      import java.util.Scanner;
      class MergeKSortedLists 
      {  
-     public static Node SortedMerge(Node a, Node b)  
+     public static Node merge(Node a, Node b)  
        {  
         Node result = null;  
         if (a == null)  
             return b;  
         else if(b == null)  
             return a;  
-    
-        /* Pick either a or b, and recur */
         if(a.data <= b.data)  
         {  
             result = a;  
-            result.next = SortedMerge(a.next, b);  
+            result.next = merge(a.next, b);  
         }  
         else
         {  
             result = b;  
-            result.next = SortedMerge(a, b.next);  
+            result.next = merge(a, b.next);  
         }  
     
         return result;  
@@ -30,7 +28,7 @@
             int i = 0, j = last;    
             while (i < j)  
             {                  
-                arr[i] = SortedMerge(arr[i], arr[j]);    
+                arr[i] = merge(arr[i], arr[j]);    
                 i++; 
                 j--;    
                 if (i >= j)  
