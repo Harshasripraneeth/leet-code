@@ -5,8 +5,8 @@ import java.util.*;
   {
    boolean compare(String string1,String string2)
     {
+     //if the length of the two strings are not equal then they    are not anagrams.
 
-     //if the length of the two strings are not equal then they    are not anagrams
      if( string1.length() != string2.length())
        return false;
 
@@ -18,6 +18,8 @@ import java.util.*;
      //frequency of each character in string1 is stored map m1.
      for(char c : string1.toCharArray())
       {
+//to make all upper case Character converted to lower case Characters.
+       c = Character.toLowerCase(c);
        if(!m1.containsKey(c))
          m1.put(c,1);
        else
@@ -29,6 +31,7 @@ import java.util.*;
    // frequency of each character in string2 is store in map m2.
       for(char c : string2.toCharArray())
       {
+       c= Character.toLowerCase(c);
        if(!m2.containsKey(c))
          m2.put(c,1);
        else
